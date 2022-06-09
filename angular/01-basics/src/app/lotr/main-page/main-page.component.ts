@@ -11,14 +11,33 @@ interface Character {
   styleUrls: ['./main-page.component.css'],
 })
 export class MainPageComponent {
+  characters: Character[] = [
+    {
+      name: 'Bilbo',
+      power: 20,
+    },
+    {
+      name: 'Frodo',
+      power: 24,
+    },
+  ];
+
   newCharacter: Character = {
-    name: 'Gimli',
-    power: 80,
+    name: '',
+    power: 0,
   };
 
   constructor() {}
 
   add() {
-    console.log(this.newCharacter);
+    if (this.newCharacter.name.trim().length === 0) {
+      return;
+    }
+
+    this.characters.push(this.newCharacter);
+    this.newCharacter = {
+      name: '',
+      power: 0,
+    };
   }
 }
