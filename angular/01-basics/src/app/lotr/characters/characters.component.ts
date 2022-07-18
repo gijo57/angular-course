@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Character } from '../interfaces/lotr.interface';
 
 @Component({
   selector: 'app-characters',
@@ -6,5 +7,5 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./characters.component.css'],
 })
 export class CharactersComponent {
-  characters: any[] = [];
+  @Input() characters: Character[] = [];
 }

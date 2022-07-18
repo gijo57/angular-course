@@ -4,9 +4,10 @@ import { FormsModule } from '@angular/forms';
 
 import { MainPageComponent } from './main-page/main-page.component';
 import { CharactersComponent } from './characters/characters.component';
+import { NewCharacterComponent } from './new-character/new-character.component';
 
 @NgModule({
-  declarations: [MainPageComponent, CharactersComponent],
+  declarations: [MainPageComponent, CharactersComponent, NewCharacterComponent],
   imports: [CommonModule, FormsModule],
   exports: [MainPageComponent],
 })

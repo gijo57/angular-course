@@ -1,9 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
-interface Character {
-  name: string;
-  power: number;
-}
+import { Component } from '@angular/core';
+import { Character } from '../interfaces/lotr.interface';
 
 @Component({
   selector: 'app-main-page',
@@ -22,22 +18,10 @@ export class MainPageComponent {
     },
   ];
 
-  newCharacter: Character = {
-    name: '',
-    power: 0,
-  };
-
+  newCharacter: Character = { name: 'Gandalf', power: 99 };
   constructor() {}
 
-  add() {
-    if (this.newCharacter.name.trim().length === 0) {
-      return;
-    }
-
-    this.characters.push(this.newCharacter);
-    this.newCharacter = {
-      name: '',
-      power: 0,
-    };
+  addNewCharacter(character: Character) {
+    this.characters.push(character);
   }
 }
